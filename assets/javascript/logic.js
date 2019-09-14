@@ -184,7 +184,7 @@ function markBreweries() {
     let queryURL = "https://api.openbrewerydb.org/breweries?per_page=50"
     // Setup the ajax prefilter to route through our dedicated CORS server
     $.ajaxPrefilter(function (options) {
-        options.url = 'https://dvavs-hmb-cors-proxy.herokuapp.com/' + queryURL + locationQuery;
+        options.url = 'https://deb-cors.herokuapp.com/' + queryURL + locationQuery;
     });
     // Ajax call for OpenBreweryDB
     $.ajax({
@@ -208,7 +208,7 @@ function markBreweries() {
                     // Setup the ajax prefilter to route through our dedicated CORS server
                     $.ajaxPrefilter(function (options) {
                         if (options.crossDomain && jQuery.support.cors) {
-                            options.url = 'https://dvavs-hmb-cors-proxy.herokuapp.com/' + googleQuery;
+                            options.url = 'https://deb-cors.herokuapp.com/' + googleQuery;
                         }
                     });
                     // Make an ajax call to the google maps API
