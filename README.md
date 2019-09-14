@@ -2,7 +2,7 @@
 
 **Hold My Beer (HMB)** was developed as the first group project assignment for the University of Richmond Web Development Bootcamp (May - October 2019 cohort).
 
-https://dvavs.github.io/Firefoxes_Bootcamp_Proj1/
+https://dawarrick.github.io/HoldMyBeerDos/
 
 
 ## The Who
@@ -103,4 +103,4 @@ Prior to brewery specification - when a user simply defines an area of interest 
 
 #### Dedicated CORS Proxy Server
 
-In order to serve users effectively, **HMB** makes numerous AJAX requests to APIs. Because it is run from the client's browser directly, rather than routing through a server, this results in frequent denial of API requests due to CORS issues. A proxy server is needed to format the API requests in such a manner that they will return the desired data. However, publicly available options such as [CORS Anywhere](https://cors-anywhere.herokuapp.com/) limit the rate at which they will accept requests from outside domains. During testing we found that we needed to make more requests to the APIs than the rate limit of CORS Anywhere would allow - and this would also likely be an issue in the event of heavy app use after deployment. As a result, we forked the [CORS Anywhere GitHub repository](https://github.com/Rob--W/cors-anywhere) to build and host our own [**HMB**-dedicated CORS proxy server](https://dvavs-hmb-cors-proxy.herokuapp.com/). Our app's deployed URL was given unlimited access to the server, and we were able to set our own rate limit to suit our testing needs (and reduce it after deployment to prevent abuse of the proxy).
+In order to serve users effectively, **HMB** makes numerous AJAX requests to APIs. Because it is run from the client's browser directly, rather than routing through a server, this results in frequent denial of API requests due to CORS issues. A proxy server is needed to format the API requests in such a manner that they will return the desired data. However, publicly available options such as [CORS Anywhere](https://cors-anywhere.herokuapp.com/) limit the rate at which they will accept requests from outside domains. During testing we found that we needed to make more requests to the APIs than the rate limit of CORS Anywhere would allow - and this would also likely be an issue in the event of heavy app use after deployment. As a result, we forked the [CORS Anywhere GitHub repository](https://github.com/Rob--W/cors-anywhere) to build and host our own [**HMB**-dedicated CORS proxy server](https://deb-cors.herokuapp.com/). Our app's deployed URL was given unlimited access to the server, and we were able to set our own rate limit to suit our testing needs (and reduce it after deployment to prevent abuse of the proxy).
