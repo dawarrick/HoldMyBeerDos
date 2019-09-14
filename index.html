@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Hold My Beer!</title>
+
+
+    <!-- Bulma CSS, contains a reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <!-- Bulma-related icons script -->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+    <!-- Link to our personal styles-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <!-- link to jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <section class="hero is-warning is-bold" id="header">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-1" id="header-text">
+                    Hold My Beer!
+                </h1>
+                <h2 class="subtitle" id="subtitle">
+                    Wherever you're going, wherever you are. Find the perfect brewery - near or far.
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <div class="box">
+        <div class="columns">
+            <div class="column" id="parameterSelect">
+                <h2>Where are you looking?</h2>
+                <div class="pac-card" id="pac-card">
+                    <div>
+                        <div id="title">
+                            Select City and State
+                        </div>
+                        <div id="infowindow-content">
+                            <img src="" width="16" height="16" id="place-icon">
+                            <span id="place-name" class="title"></span><br>
+                            <span id="place-address"></span>
+                        </div>
+                    </div>
+                    <div id="pac-container">
+                        <input class="input" id="pac-input" type="text" placeholder="Enter a location">
+                    </div>
+                </div>
+                <form>
+                    <label for="beerSelect">What kind of brewery are you interested in?</label>
+                    <p id="all">(Check all that apply)</p>
+                    <div class="form-group" id="beerSelect">
+                        <div class="custom-control custom-checkbox" id="brewpubSelect">
+                            <input type="checkbox" class="custom-control-input sizeSelect" id="brewpub">
+                            <label class="custom-control-label" for="brewpub">Brewpub</label>
+                        </div>
+                        <div class="custom-control custom-checkbox" id="microSelect">
+                            <input type="checkbox" class="custom-control-input sizeSelect" id="micro">
+                            <label class="custom-control-label" for="micro">Microbrewery</label>
+                        </div>
+                        <div class="custom-control custom-checkbox" id="regionalSelect">
+                            <input type="checkbox" class="custom-control-input sizeSelect" id="regional">
+                            <label class="custom-control-label" for="regional">Regional</label>
+                        </div>
+                        <div class="custom-control custom-checkbox" id="largeSelect">
+                            <input type="checkbox" class="custom-control-input sizeSelect" id="large">
+                            <label class="custom-control-label" for="large">Domestic</label>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="custom-control custom-checkbox" id="checkExcludeClosed">
+                        <input type="checkbox" class="custom-control-input excludeClosed" id="excludeClosed">
+                        <label class="custom-control-label" for="excludeClosed">Exclude Closed Breweries</label>
+                    </div>
+                </form>
+                <a class="button is-warning" id="btnSubmit">Submit</a>
+            </div>
+
+            <!--Card style Error Modal window. This brings the X in the header but needs to have an on.click function applied to it -->
+            <div class="modal" id="error-modal">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">There was a problem!</p>
+                        <button class="delete"></button>
+                    </header>
+                    <section class="modal-card-body" id="error-msg"></section>
+                </div>
+            </div>
+
+            <!--Map-->
+            <div class="column" id="dataOutput">
+                <div id="map">
+                </div>
+                <br>
+
+                <!-- Content div with information about breweries, accomodations, etc. TBD -->
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            Results
+                        </p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            <div id="infoDisplay">
+                                <p>Nothing yet. Try a search!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Team Firefoxes</p>
+    </footer>
+
+    <!-- link to our app-specific JavaScript -->
+    <script src="assets/javascript/logic.js"></script>
+
+    <!-- link to initialize the map -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdbsiqFxjAUt8-qUuCt4dsHTdnnJSJ3iU&libraries=places&callback=initMap"
+        async defer></script>
+
+</body>
+
+</html>
